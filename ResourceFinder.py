@@ -22,6 +22,10 @@ while i <len(data):
 RevisionMedia.append(temp)
 
 
-Sources = [s[0] for s in RevisionMedia] 
+Sources = [(s+1,RevisionMedia[s][0].split(':')[0].capitalize()) for s in range(len(RevisionMedia))]
+sourceDict={}
+for source in Sources:
+ sourceDict[source[0]]= source[1]
+ print(f'{source[0]}) {source[1]}')
 
 
