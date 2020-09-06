@@ -23,9 +23,21 @@ RevisionMedia.append(temp)
 
 
 Sources = [(s+1,RevisionMedia[s][0].split(':')[0].capitalize()) for s in range(len(RevisionMedia))]
-sourceDict={}
 for source in Sources:
- sourceDict[source[0]]= source[1]
  print(f'{source[0]}) {source[1]}')
 
+# ChosenS = int(input('\nWhich would you like to revise from?'))
+# if int(ChosenS) > len(RevisionMedia) or int(ChosenS) < 0 :
+#   print('Invalid input')  
+ChosenS  =1
 
+links=[]
+print(f'\n{RevisionMedia[ChosenS-1][0]}')
+for topic in range(1,len(RevisionMedia[ChosenS-1])):
+  topicN,topicL= RevisionMedia[ChosenS-1][topic].split('-')
+  links.append(topicL)
+  print(f'{topic}.  {topicN}')
+
+
+
+# os.system("open \"\" https://example.com")
